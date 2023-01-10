@@ -17,18 +17,35 @@ h1{
   margin-left: 50px;
   color: aliceblue;
 }
+.home{
+  margin-top: 5px;
+  cursor: pointer;
+  color: cyan;
+  /* color: #25be60 */
+}
+.home:hover:active{
+  margin-top: 5px;
+  cursor: pointer;
+  color: #2575be;
+  transform: translateY(2px);
+}
 .searchbar{
   /* margin: auto 10px; */
   cursor: pointer;
   margin-right: 50px;  
-  margin-top: 8px;
+  margin-top: 15px;
 }
 .search_button:hover{
   background-color: aquamarine;
+  cursor: pointer;  
+}
+.search_button:active {
+  background-color: bisque;
+  transform: translateY(2px);
 }
 .center{
   text-align: center;
-  margin-left: 40rem;
+  margin-left: 48rem;
 
 }
 .container{

@@ -16,18 +16,24 @@ function App() {
       alert("Invalid Title");
     }
   };
+  const home = function() {
+    if(home){
+      setMovies(initialMovies);
+    }
+  }
   const searchMovies = function () {
     if (search) {
       getMovies(search);
     } else {
       setMovies(initialMovies);
     }
+    // setMovies(initialMovies);
   };
   const addFav = function (item) {
     let s = JSON.stringify(item);
     for (let i = 0; i < fav.length; i++) {
       if (s === JSON.stringify(fav[i])) {
-        alert("Movie already present in your Favorites");
+        alert("Movie already EXIST in your Favorites list");
         return;
       }
     }
@@ -51,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h1 className="center1">Favorite Movies App</h1>
+        <h1 className="home" onClick={home}>Favorite Movies App</h1>
         <div className="searchbar">
           <input
             type="text"
@@ -72,7 +78,7 @@ function App() {
             <div className="box" key={i} onClick={() => addFav(item)}>
               <img src={item.Poster} alt={item.Title} />
               <div className="movie" id={`movie-${i}`}>
-                <h4>Add to Favorites</h4>
+                <h4 className="movie_add">Add to Favorites</h4>
               </div>
             </div>
           );
@@ -80,7 +86,7 @@ function App() {
       </div>
       <br />
       <div className="header">
-        <h1 className="center">Favorites</h1>
+        <h1 className="center">Favorites </h1>
       </div>
       <div className="container">
         {fav.map((item, i) => {
@@ -88,7 +94,7 @@ function App() {
             <div className="box" key={i} onClick={() => removeFav(i)}>
               <img src={item.Poster} alt={item.Title} />
               <div className="movie" id={`movie-${i}`}>
-                <h4>Remove from Favorites</h4>
+                <h4 >Remove from Favorites</h4>
               </div>
             </div>
           );
